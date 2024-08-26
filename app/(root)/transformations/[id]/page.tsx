@@ -1,6 +1,6 @@
 import React from "react";
 
-const Transformations = ({ params: id }) => {
+const Transformations = () => {
 	return <div>Transformations</div>;
 };
 
