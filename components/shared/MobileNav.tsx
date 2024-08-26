@@ -47,7 +47,7 @@ const MobileNav = () => {
 							/>
 						</SheetTrigger>
 						<SheetContent className="sheet-content md:w-64">
-							<>
+							<div>
 								<Image
 									src="/assets/images/logo-text.svg"
 									alt="logo"
@@ -80,7 +80,7 @@ const MobileNav = () => {
 										);
 									})}
 								</ul>
-							</>
+							</div>
 						</SheetContent>
 					</Sheet>
 				</SignedIn>
