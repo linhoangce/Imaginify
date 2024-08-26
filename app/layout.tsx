@@ -36,15 +36,7 @@ export default function RootLayout({
 					variables: { colorPrimary: "#624cf5" },
 				}}
 			>
-				<body className={cn("font-IBMPPlex antialiased", IBMPlex.variable)}>
-					<SignedOut>
-						<>
-							<SignInButton />
-							<SignUpButton />
-						</>
-					</SignedOut>
-					{children}
-				</body>
+				<body className={cn("font-IBMPPlex antialiased", IBMPlex.variable)}>{children}</body>
 			</ClerkProvider>
 		</html>
 	);
