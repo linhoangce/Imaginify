@@ -47,7 +47,7 @@ const MobileNav = () => {
 							/>
 						</SheetTrigger>
 						<SheetContent className="sheet-content md:w-64">
-							<div>
+							<>
 								<Image
 									src="/assets/images/logo-text.svg"
 									alt="logo"
@@ -80,7 +80,7 @@ const MobileNav = () => {
 										);
 									})}
 								</ul>
-							</div>
+							</>
 						</SheetContent>
 					</Sheet>
 				</SignedIn>
@@ -90,7 +90,7 @@ const MobileNav = () => {
 						asChild
 						className="button bg-purple-gradient bg-cover"
 					>
-						<Link href="/sign-in">Log in</Link>{" "}
+						<Link href="/sign-in">Login</Link>{" "}
 					</Button>
 				</SignedOut>
 			</nav>
