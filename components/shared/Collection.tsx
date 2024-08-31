@@ -54,14 +54,14 @@ const Collection = ({
 				<ul className="collection-list">
 					{images.map((image) => (
 						<Card
-							key={image._id as string}
+							key={image._id}
 							image={image}
 						/>
 					))}
 				</ul>
 			) : (
 				<div className="collection-empty">
-					<p className="p-20-semibold">No Edit</p>
+					<p className="p-20-semibold">No Match</p>
 				</div>
 			)}
 
