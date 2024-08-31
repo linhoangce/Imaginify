@@ -2,6 +2,7 @@
 
 import {
 	Sheet,
+	SheetClose,
 	SheetContent,
 	SheetDescription,
 	SheetHeader,
@@ -54,32 +55,35 @@ const MobileNav = () => {
 									width={152}
 									height={23}
 								/>
-								<ul className="header-nav_elements">
-									{navLinks.slice(0, 6).map((link) => {
-										const isActive = link.route === pathname;
-										return (
-											<li
-												key={link.route}
-												className={`${
-													isActive && "gradient-text"
-												} p-18 flex whitespace-nowrap text-dark-700`}
-											>
-												<Link
-													className="sidebar-link cursor-pointer"
-													href={link.route}
+								<SheetClose asChild>
+									<ul className="header-nav_elements">
+										{navLinks.slice(0, 6).map((link) => {
+											const isActive = link.route === pathname;
+											return (
+												<SheetClose
+												asChild
+													key={link.route}
+													className={`${
+														isActive && "gradient-text"
+													} p-18 flex whitespace-nowrap text-dark-700`}
 												>
-													<Image
-														src={link.icon}
-														alt="logo"
-														width={24}
-														height={24}
-													/>
-													{link.label}
-												</Link>
-											</li>
-										);
-									})}
-								</ul>
+													<Link
+														className="sidebar-link cursor-pointer"
+														href={link.route}
+													>
+														<Image
+															src={link.icon}
+															alt="logo"
+															width={24}
+															height={24}
+														/>
+														{link.label}
+													</Link>
+												</SheetClose>
+											);
+										})}
+									</ul>
+								</SheetClose>
 							</>
 						</SheetContent>
 					</Sheet>
@@ -99,4 +103,3 @@ const MobileNav = () => {
 };
 
 export default MobileNav;
-
