@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { IImage } from "@/lib/database/models/image.model";
 import { formUrlQuery } from "@/lib/utils";
@@ -13,7 +13,7 @@ import {
 	PaginationPrevious,
 } from "@/components/ui/pagination";
 import { Button } from "../ui/button";
-import {Search} from "./Search";
+import { Search } from "./Search";
 import Card from "./Card";
 
 const Collection = ({
