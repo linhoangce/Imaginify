@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
 import { useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { useToast } from "../ui/use-toast";
-import { checkoutCredits } from "@/lib/actions/transaction.actions";
+import { checkoutCredits } from "@/lib/actions/transaction.action";
 import { Button } from "../ui/button";
 
 const Checkout = ({
@@ -45,7 +45,9 @@ const Checkout = ({
 		}
 	}, []);
 
-	const onCheckout = async () => {
+	const onCheckout = async (event: React.FormEvent) => {
+		event.preventDefault();
+
 		const transaction = {
 			plan,
 			amount,
@@ -53,14 +55,15 @@ const Checkout = ({
 			buyerId,
 		};
 
-		await checkoutCredits(transaction);
+		try {
+			await checkoutCredits(transaction);
+		} catch (err) {
+			console.log(err);
+		}
 	};
 
 	return (
-		<form
-			action={onCheckout}
-			method="POST"
-		>
+		<form onSubmit={onCheckout}>
 			<section>
 				<Button
 					type="submit"

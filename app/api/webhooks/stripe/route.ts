@@ -1,4 +1,6 @@
-import { createTransaction } from "@/lib/actions/transaction.actions";
+/* eslint-disable camelcase */
+
+import { createTransaction } from "@/lib/actions/transaction.action";
 import { NextResponse } from "next/server";
 import stripe from "stripe";
 
@@ -6,18 +8,17 @@ export async function POST(request: Request) {
 	const body = await request.text();
 
 	const sig = request.headers.get("stripe-signature") as string;
-
 	const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET!;
 
 	let event;
 
 	try {
 		event = stripe.webhooks.constructEvent(body, sig, endpointSecret);
-	} catch (error) {
-		return NextResponse.json({ message: "Webhook error", error: error });
+	} catch (err) {
+		return NextResponse.json({ message: "Webhook error", error: err });
 	}
 
-	// Get the Id and type
+	// Get the ID and type
 	const eventType = event.type;
 
 	// CREATE
