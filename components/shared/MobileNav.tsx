@@ -57,7 +57,7 @@ const MobileNav = () => {
 								/>
 								<SheetClose asChild>
 									<ul className="header-nav_elements">
-										{navLinks.slice(0, 6).map((link) => {
+										{navLinks.map((link) => {
 											const isActive = link.route === pathname;
 											return (
 												<SheetClose
